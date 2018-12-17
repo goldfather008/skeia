@@ -1,0 +1,76 @@
+@charset "utf-8";
+.psearchhead {	
+}
+.psearchhead .form-group {
+	display: inline-block;
+	*zoom:1;
+	*display:inline;
+    width: 240px;
+    height: 30px;
+	line-height: 30px
+}
+.psearchhead .form-group.project-name {
+
+	width:auto;
+}
+.psearchhead .form-group-lg {
+	width: 370px; 
+}
+.psearchhead .form-group-block {
+	display: block;
+	width: auto;
+}
+.form-group .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.form-group .form-control, .form-group .select-field {
+    display: inline-block;
+    vertical-align: middle;
+    color: #555; 
+    font-size: 12px;
+    border-radiu: 1px;
+    padding: 0;
+	margin: 0;
+	border: 1px solid #ccc; 
+}
+.form-group .form-control {
+    width: 127px;
+    height: 21px;
+    line-height: 21px;
+    padding-left: 2px;
+}
+.form-group.project-name .form-control {
+	width: 371px;	
+}
+.select-field {
+	width: 131px;	
+	height: 23px;
+	background:none;
+}
+.form-group .select-field option {
+	border:none;	
+}
+.form-group select[name="businessRole"] {
+	width:95px;	
+}
+.toggle-search {
+	display: none;
+	padding-top:2px;		
+}
+.toggle-bar {
+	text-align:left;	
+}
+a.toggle-btn {
+	display: inline-block;
+	background:url(../images/arrow_down2.png) no-repeat left center;
+	padding: 5px 0 5px 22px;
+	color: #399FC7;
+	font-weight: bold;	
+}
+a.toggle-btn.open {
+	background-image:url(../images/arrow_up2.png);	
+}
+a.toggle-btn:hover {
+	color: #399FC7;	
+}	

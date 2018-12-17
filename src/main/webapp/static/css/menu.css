@@ -1,0 +1,50 @@
+ul, li, dl, dt, dd {list-style:none;margin: 0;padding: 0;}
+
+img {border:0;padding-right:5px}
+h3 {margin:0;padding:0;}
+.arrowlistmenu {width: 200px;background:#D0E8F2;height:100%; 
+}
+body, html {height:100%}
+/*二级菜单常规样式*/
+.arrowlistmenu .menuheader{
+	color:white;
+	font-size:12px;
+	background: black url(../images/close.gif) repeat-x center left;
+	text-transform: uppercase;
+	padding: 5px 0 6px 35px; 
+	cursor: pointer;
+}
+/*二级菜单展开后样式*/
+.arrowlistmenu .openheader {background-image: url(../images/open.gif);}
+.arrowlistmenu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.arrowlistmenu ul li { *width:200px; overflow:hidden;}
+.arrowlistmenu ul li .opensubheader { background:url(../images/br.gif) no-repeat right bottom; !important}
+.arrowlistmenu ul li .closedsubheader {background:url(../images/br.gif) no-repeat right bottom;!important;}
+.arrowlistmenu ul li a {
+	color: #000;background: url(../images/br.gif) no-repeat bottom left; 
+	display: block;padding: 5px 0;padding-left: 5px;text-decoration: none;font-size: 12px;
+}
+.arrowlistmenu ul li a:visited {}
+.arrowlistmenu ul li a:hover {}
+.arrowlistmenu ul li a.subexpandable:hover {color:#0067B2;background:url(../images/br.gif) no-repeat right bottom;
+}
+.categoryitems {
+	border:1px #3D72A4 solid;
+	border-top:none;
+	background:#F0F8FB;
+	width:198px; overflow:hidden
+}
+.arrowlistmenu ul li .as a {
+	color:#0065B3
+}
+.leftmar {
+	font-size:1px;
+	height:5px;
+	line-height:5px;
+}
+/*获得焦点的三级菜单选项样式*/
+.ahover{background:url(../images/twos.gif) no-repeat 2px center; color:#0169b2;}

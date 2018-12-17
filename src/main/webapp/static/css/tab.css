@@ -1,0 +1,57 @@
+#tabs1 {
+	background-position: 50% bottom;
+	background-image: url(../images/tab_bg.gif);
+	vertical-align: bottom;
+	line-height: normal;
+	background-repeat: repeat-x;
+	background-color: #f4f7fb;
+	width: 100%;
+}
+#tabs1 ul {
+	height:34px;padding-right: 10px; padding-left: 10px; padding-bottom: 0px; margin: 0px; padding-top: 5px; list-style-type: none; text-align: center
+}
+#tabs1 li {
+	padding-right: 0px; display: inline; padding-left: 0px; padding-bottom: 0px; margin: 0px; padding-top: 0px
+}
+#tabs1 a {
+	padding-right: 0px;
+	background-position: left 0px;
+	padding-left: 4px;
+	float: left;
+	background-image: url(../images/tab_left.gif);
+	padding-bottom: 0px;
+	margin: 0px;
+	padding-top: 0px;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	line-height: 20px;
+}
+#tabs1 a span {
+	padding-right: 15px;
+	background-position: right 0px;
+	display: block;
+	padding-left: 15px;
+	float: none;
+	background-image: url(../images/tab_bright.gif) ;
+	padding-bottom: 4px;
+	vertical-align: middle;
+	color: #333333;
+	padding-top: 5px;
+	background-repeat: no-repeat;
+	text-align: center
+}
+#tabs a:hover span {
+	vertical-align: bottom; color: #627eb7
+}
+#tabs1 a:hover {
+	background-position: 0% -60px
+}
+#tabs1 a:hover span {
+	background-position: 100% -60px
+}
+#tabs1 #current a {
+	background-position: 0% -29px
+}
+#tabs1 #current a span {
+	background-position: 100% -29px
+}

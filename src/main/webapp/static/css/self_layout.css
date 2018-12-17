@@ -1,0 +1,248 @@
+#head{
+	padding:10px 0 0 0;
+	color:#FFF;	
+}
+/*欢迎语*/
+form#changeRoleForm div
+{
+	height:30px;
+	line-height:30px;
+}
+/*项目名称|版本号*/
+.self_menu_right{
+	float:right;
+	margin:0 20px 0 0;
+	height:30px;	
+	color:#e0eeee;	
+	font-weight: bold;	
+}
+.self_menu_right img {
+	display: block;
+	float: left;
+	height: 18px;
+	margin: 0;
+	padding: 0;
+	
+}
+.self_menu_right .project-name {
+	font-size: 14px;
+}
+
+.self_menu_right .version-number {
+	font-style: italic;
+	font-size: 12px;
+}
+
+/**
+*自定义一级菜单样式
+*/
+#self_menu
+{
+	float:left;
+	height:30px;
+	margin:0 0 0 10px;
+}
+#self_menu .self_menu_lefticon{
+	float:left;
+	width:42px;
+	height:30px;
+	background:url(../images/skin_icons.png) 0 -245px no-repeat;
+}
+#self_menu ul li
+{
+	float:left;
+	height:30px;
+	font-size:16px;
+	line-height:30px;	
+}
+#self_menu ul li a{
+	height:100%;
+	display:block;
+	margin:0 2px;
+	padding:0 10px;
+	color:#EEE;
+	background:#425163;
+	border:1px solid #8f8f8f;
+	border-radius:4px 4px 0 0;
+}
+#self_menu ul li a:hover{
+	/*color:#364f56;*/
+	color:#4279AD;
+	background:#E7EBE7;
+}
+#self_menu ul li.current_li a{
+	color:#4279AD;
+	background:#E7EBE7;
+}
+#self_menu ul li.current_li a:hover{
+	color:#4279AD;
+	background:#E7EBE7;
+}
+/**
+*二级菜单样式覆盖
+*/
+.panel-body{
+	background:#E7EBE7;
+	border:none;
+	overflow:auto;
+}
+.layout-panel-west .panel-header,.layout-panel-west .panel-title{
+	background:#E7EBE7;
+	border:none;
+	color:#E7EBE7;	
+}
+/*二级菜单盒子*/
+.arrowlistmenu {
+	width:100%;	
+	background:#E7EBE7;
+}
+.arrowlistmenu h3.menuheader{ /*CSS class for menu headers in general (expanding or not!)*/
+	position:relative;	
+	font-weight:normal;
+	color:#EEE;
+	background:#425163;
+	padding:5px 0 6px 5px;
+	margin:0 0 0 10px;
+	border-radius:5px;
+}
+.arrowlistmenu h3.menuheader i{
+	float:left;
+	display:block;
+	width:14px;
+	height:14px;
+	margin:3px 3px 3px 0;
+	background:url(../images/skin_icons.png) 0 -168px no-repeat;
+}
+.arrowlistmenu h3.menuheader b{
+	display:block;
+	position:absolute;
+	top:7px;
+	right:10px;
+	width:12px;
+	height:12px;
+	background:url(../images/skin_icons.png) no-repeat;
+	background-position: -56px -168px;
+}
+.arrowlistmenu h3.openheader b{
+	background-position: -84px -168px;
+}
+/**
+*自定义三级菜单样式
+*/
+.arrowlistmenu ul li{
+	padding:0 0 0 35px;
+	line-height:20px;
+	position:relative;
+	cursor:pointer;
+}
+.arrowlistmenu ul li a{
+	color:#4279AD;
+	background:none;
+}
+.arrowlistmenu ul.categoryitems {
+	width:100%;
+	border:none;
+	background:#E7EBE7;
+	overflow:hidden
+}
+.arrowlistmenu ul li a i{
+	float:left;
+	display:block;
+	width:25px;
+	height:16px;
+	margin:3px 3px 3px 0;	
+}
+.arrowlistmenu ul li.self_li_folder a i{
+	background:url(../images/skin_icons.png) -108px -26px no-repeat;	
+	/*background:url(../images/skin_icons.png) -160px -252px no-repeat;*/
+}
+.arrowlistmenu ul li.self_li_file a i{
+	background:url(../images/skin_icons.png) -276px -26px no-repeat;
+}
+/*三级菜单选项样式*/*/
+.arrowlistmenu ul li a.subexpandable{
+	background:none;	
+}
+.arrowlistmenu ul li a.subexpandable:hover{
+	color:#4279AD;
+	background:none;
+}
+.arrowlistmenu ul li a.opensubheader {
+	background:none;
+}
+.arrowlistmenu ul li a.closedsubheader {
+	background:none;	
+}
+.arrowlistmenu ul li.self_li_folder a b{
+	display:block;
+	position:absolute;
+	top:7px;
+	right:10px;
+	width:12px;
+	height:12px;
+	background:url(../images/skin_icons.png) no-repeat;
+}
+.arrowlistmenu ul li a.opensubheader b{	
+	background-position: -56px -168px;
+}
+.arrowlistmenu ul li a.closedsubheader b{
+	background-position: -84px -168px;
+}
+/*当前激活的三级菜单样式*/
+.arrowlistmenu ul li.ahover{
+	background:none;	
+}
+.arrowlistmenu ul li.ahover a{
+	color:#FFF;
+	background:#16a0d3;
+	border-radius:3px;
+}
+.arrowlistmenu ul li.ahover a i{
+	background:url(../images/skin_icons.png) -28px -168px no-repeat;
+}
+/*四级*/
+.arrowlistmenu ul li ul.subcategoryitems li{
+	padding:0 0 0 15px;
+}
+/*二级标题盒子右侧调节杆*/
+.layout-split-west{
+	border-color:#E7EBE7;
+}
+/*桌面标题栏样式覆盖*/
+.layout-panel-center .panel-header,.layout-panel-center .panel-title{
+	color:#4279AD;
+	font-size:normal;
+	background:#E7EBE7;
+}
+.layout-panel-center .panel-header{
+	border:none;
+}
+
+/*底部技术支持*/
+.bottom-copyright {
+	background: #2F3946;
+	background: -webkit-linear-gradient(#425163, #212831); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#425163, #212831); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#425163, #212831); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#425163, #212831); /* 标准的语法 */
+	border-top:1px solid #8f8f8f;
+	color:#eee;
+	color: #e0eeee;
+	padding:10px 0;
+	text-align:center;
+}
+.bottom-copyright a {
+	color: #e0eeee;
+}
+/**/
+.menu-iframe {
+	
+}
+
+.west-tool-container {
+	position:relative;
+	width: 15px;
+	height: 99%;
+	float: right;
+	background: red;	
+}

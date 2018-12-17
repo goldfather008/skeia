@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- spring-shiro权限管理过滤器，这里的id要等于web.xml中的shiro配置的filter-name -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<!-- 调用自定义授权认证管理器 -->
+		<property name="securityManager" ref="securityManager" />
+		<!-- 配置登录地址 -->
+		<property name="loginUrl" value="/login" />
+		<!-- 登录成功后跳转的地址 -->
+		<property name="successUrl" value="/home" />
+		<!-- 非法访问时，跳转的地址 -->
+		<property name="unauthorizedUrl" value="/403" />
+
+		<!-- 自定义filter配置 -->
+		<!--  <property name="filters">
+			<util:map>
+				<entry key="authc">
+					<bean class="com.plg.shiro.filter.shiro.UserAuthenticationFilter"/>
+				</entry>
+			</util:map>
+			
+			将自定义 的FormAuthenticationFilter注入shiroFilter中
+			<map>
+				<entry key="authc" value-ref="formAuthenticationFilter" />
+			</map>
+		</property> -->
+
+		<!-- 配置权限拦截的路径，以及认证方式 -->
+		<property name="filterChainDefinitions">
+			<value>
+				<!-- anon表示此地址不需要任何权限即可访问 -->
+				/login = anon
+				/logout = anon
+				/static/** = anon
+				/403 = anon
+				/home = anon
+				<!-- 所有的请求(除去配置的静态资源请求或请求地址为anon的请求)都要通过登录验证,如果未登录则跳到unauthorizedUrl指定的url -->
+				/** = authc
+			</value>
+		</property>
+	</bean>
+
+	<!-- 安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!-- 自定义授权认证类 -->
+		<property name="realm" ref="myRealm" />
+		<!-- 使用shiro自带的缓存管理器 -->
+		<property name="cacheManager" ref="cacheManager" />
+	</bean>
+
+	<bean name="myRealm" class="com.huyonghua.skeia.shiro.UserAuthorizingRealm" />
+	<bean name="cacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" />
+	
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+</beans>

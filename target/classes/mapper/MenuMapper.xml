@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huyonghua.skeia.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.huyonghua.skeia.entity.Menu">
+    <id column="menu_id" jdbcType="INTEGER" property="menuId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="menu_level" jdbcType="TINYINT" property="menuLevel" />
+    <result column="menu_text" jdbcType="VARCHAR" property="menuText" />
+    <result column="menu_url" jdbcType="VARCHAR" property="url" />
+    <result column="permis_id" jdbcType="INTEGER" property="permisId" />
+    <result column="enable_flag" jdbcType="TINYINT" property="enableFlag" />
+    <result column="menu_order" jdbcType="INTEGER" property="menuOrder" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    menu_id, parent_id, menu_level, menu_text, menu_url, permis_id, enable_flag, menu_order, create_time, 
+    update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </select>
+  
+  	<select id="queryUserMenu" resultMap="BaseResultMap">
+		select 
+			om.menu_id,
+			om.parent_id,
+			om.menu_level,
+			om.menu_text,
+			om.menu_url,
+			om.permis_id
+		from 
+			user_role oro,
+			role_permis rp,
+			menu om
+		where 
+			oro.user_id = #{userId}
+		and rp.role_id = oro.role_id
+		and om.permis_id = rp.permis_id
+		order by om.menu_order	
+	</select>
+	
+	
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from menu
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.huyonghua.skeia.entity.Menu">
+    insert into menu (menu_id, parent_id, menu_text, 
+      menu_url, permis_id, enable_flag, 
+      menu_order, create_time, update_time
+      )
+    values (#{menuId,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{menuText,jdbcType=VARCHAR}, 
+      #{menuUrl,jdbcType=VARCHAR}, #{permisId,jdbcType=INTEGER}, #{enableFlag,jdbcType=TINYINT}, 
+      #{menuOrder,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.huyonghua.skeia.entity.Menu">
+    insert into menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuId != null">
+        menu_id,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="menuText != null">
+        menu_text,
+      </if>
+      <if test="menuUrl != null">
+        menu_url,
+      </if>
+      <if test="permisId != null">
+        permis_id,
+      </if>
+      <if test="enableFlag != null">
+        enable_flag,
+      </if>
+      <if test="menuOrder != null">
+        menu_order,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuId != null">
+        #{menuId,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="menuText != null">
+        #{menuText,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="permisId != null">
+        #{permisId,jdbcType=INTEGER},
+      </if>
+      <if test="enableFlag != null">
+        #{enableFlag,jdbcType=TINYINT},
+      </if>
+      <if test="menuOrder != null">
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huyonghua.skeia.entity.Menu">
+    update menu
+    <set>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=INTEGER},
+      </if>
+      <if test="menuText != null">
+        menu_text = #{menuText,jdbcType=VARCHAR},
+      </if>
+      <if test="menuUrl != null">
+        menu_url = #{menuUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="permisId != null">
+        permis_id = #{permisId,jdbcType=INTEGER},
+      </if>
+      <if test="enableFlag != null">
+        enable_flag = #{enableFlag,jdbcType=TINYINT},
+      </if>
+      <if test="menuOrder != null">
+        menu_order = #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huyonghua.skeia.entity.Menu">
+    update menu
+    set parent_id = #{parentId,jdbcType=INTEGER},
+      menu_text = #{menuText,jdbcType=VARCHAR},
+      menu_url = #{menuUrl,jdbcType=VARCHAR},
+      permis_id = #{permisId,jdbcType=INTEGER},
+      enable_flag = #{enableFlag,jdbcType=TINYINT},
+      menu_order = #{menuOrder,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where menu_id = #{menuId,jdbcType=INTEGER}
+  </update>
+</mapper>

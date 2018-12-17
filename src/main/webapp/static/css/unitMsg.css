@@ -1,0 +1,154 @@
+@import url("button.css");
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img{padding:0;margin:0 auto;border:0;}
+body {background:#e9f8ff url(../images/bg.jpg) repeat-x top;}
+.login{font-family:'微软雅黑'; position:relative; width:1100px; margin:0 auto;min-height:630px; background:url(../images/hbg2.jpg) no-repeat;}
+.loginBg{width:780px; margin:0 auto; padding: 80px 0 0 0; text-align:left; position: relative; z-index: 2;/* background: #fff;*/}
+.loginForm{position:relative; margin-top:60px; padding-left:78px; padding-bottom:20px; overflow:hidden; *zoom:1;}
+.loginH1{
+     width:350px; height:140px; margin-bottom:15px; margin-left:200px; 
+     background:url(../images/logo_login.jpg) no-repeat;
+     text-indent:-9999px;
+		   /*filter:alpha(opacity=50);-moz-opacity:0.5;opacity: 0.5;*/
+}
+.loginForm input.txt{
+	 width:228px; height:38px; line-height:38px; border:1px solid #84a4c1;
+	 padding:0 9px; margin-right:10px; float:left; 
+	 font-family:"Microsoft Yahei"; font-size:16px;
+	 color:#000;;
+}
+.loginForm input.focus{ border-color:#2982ff;}
+.loginForm .errtips{position:absolute; left:78px; top:46px; font-size:12px; color:#990000;}
+.loginForm .logintip{position:absolute; left:78px; top:46px; font-size:12px; }
+.loginForm a.loginBtn:hover{background-position:0 -168px; text-decoration:none;}
+.loginForm a.loginBtn:hover span{background-position:right -252px; text-decoration:none;}
+	
+#title{
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	width: 100%;
+	height: 150px;
+	text-align: center;
+	/*background: #4EA3C5;
+	background: -webkit-gradient(linear,top,bottom,color-stop(0%,#2E73A6),color-stop(100%,#4EA3C5));
+	background: -webkit-linear-gradient(180deg,#2E73A6 0,#4EA3C5 100%);
+	background: linear-gradient(180deg,#2E73A6 0,#4EA3C5 100%);*/
+}
+#title h1{
+	font-size: 50px;
+	letter-spacing: 4px;
+	padding: 30px 0 0 0;
+	margin: 0;
+	color: #fff;
+	text-shadow:-1px 0 #333,0 -1px #333,1px 0 #666,0 1px #666,4px 4px 4px #333;
+	filter:progid:DXImageTransform.Microsoft.Glow(color='#fff', Strength='5');
+}
+#title h2{
+	letter-spacing: 1px;
+	padding: 10px 0 0 0;
+	margin: 0;
+	color: #fff;
+	filter:progid:DXImageTransform.Microsoft.Glow(color='#fff', Strength='5');
+	text-shadow:3px 3px 3px #333,
+}
+
+.loginForm {
+    width: 421px;
+    margin: 35px auto 0 auto;
+}
+.loginForm table{
+	width: 100%;
+	color: #666;
+	font-weight: bold;
+	
+}
+.loginForm table td{
+	text-align: left;
+	padding-bottom: 20px;	
+}
+.loginForm table td.a-box{
+	padding-bottom: 0;	
+}
+.loginForm table td.txt-right {
+	text-align: right;	
+}
+.loginForm table td.txt-center {
+	text-align: center;
+}
+.loginForm input.txt {
+	float:none;
+	width:250px;
+	margin-right: 0;
+}
+.loginForm table td.txt-td {
+	width:270px;
+}
+.loginForm table td.txt-small-td {
+	width:172px;	
+}
+.loginForm input.txt-small {
+	width: 150px;	
+}
+a.a-red {
+	color: #990000;
+	font-weight: normal;
+}
+.valide-code-img {
+	display:block;
+	width: 100px;
+	height: 38px;
+	cursor: pointer;
+	vertical-align:middle;	
+}
+.loginForm .errtips {
+	position: relative;
+	left: 2px;
+	top: 0;
+}
+.button.green {
+	font-family: '微软雅黑';
+}
+.msg-box{
+	position: absolute;	
+	width: 260px;		
+	right: 5px;
+	top: 5px;	
+	z-index: 999;
+	font-size: 12px;	
+}
+.msg {
+	margin-bottom: 4px;
+}
+.msg:last-child {
+	margin-bottom: 0;
+}
+.msg-title {
+	background: #eee url("../images/mail16.png") no-repeat 5px center;
+	color: #3F754D;
+	padding: 5px 16px 5px 24px;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	width: 210px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.msg-title .close {
+	display:inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	font-size: 16px;
+}
+.msg-content {
+	padding: 5px;
+	display: none;
+	
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-indent:2em;
+	line-height: 18px;
+	background-color: #fff;
+	color: #555;
+}
